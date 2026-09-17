@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<meta name="theme-color" content="#f7f5f2">
+<title>반주를 부탁해요</title>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://imimboram2116.github.io/plz-banjoo/">
+<meta property="og:title" content="반주를 부탁해요">
+<meta property="og:description" content="반주 돌봄 안내 — 밥그릇·물그릇·화장실 위치와 챙기는 방법">
+<meta property="og:image" content="https://imimboram2116.github.io/plz-banjoo/og-banju.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root{
+    --bg:#f7f5f2; --card:#ffffff; --ink:#2e2a27; --muted:#9b938c; --line:#efeae4;
+    --pink:#f47fa8; --pink-soft:#ffe3ee; --pink-deep:#d9467b;
+    --green:#9cc649; --yellow:#f7cf57; --orange:#f4a340; --sky:#7cc0d8;
+    --clay: 0 12px 28px rgba(120,100,80,.10), 0 2px 4px rgba(120,100,80,.06), inset 0 -3px 0 rgba(0,0,0,.035), inset 0 2px 0 rgba(255,255,255,.9);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:"Pretendard","Apple SD Gothic Neo","AppleSDGothicNeo",sans-serif;
+    -webkit-text-size-adjust:100%; text-size-adjust:100%;
+    padding-block:max(32px, env(safe-area-inset-top)) max(40px, env(safe-area-inset-bottom));
+    padding-inline:max(16px, env(safe-area-inset-left)) max(16px, env(safe-area-inset-right));
+    line-height:1.5; letter-spacing:-.01em;
+  }
+  .wrap{max-width:480px;margin:0 auto}
+
+  /* 헤더 */
+  header{text-align:center;margin-bottom:28px}
+  .blobs{display:flex;justify-content:center;gap:10px;margin-bottom:18px}
+  .blob{width:30px;height:30px;border-radius:50%;
+    box-shadow:inset -3px -4px 6px rgba(0,0,0,.12), inset 3px 3px 6px rgba(255,255,255,.55), 0 6px 12px rgba(120,100,80,.12)}
+  .blob.pink{background:radial-gradient(circle at 35% 30%,#ffc2d7,var(--pink) 72%)}
+  .blob.green{background:radial-gradient(circle at 35% 30%,#cfe890,var(--green) 72%);border-radius:40% 60% 55% 45%/50% 45% 55% 50%}
+  .blob.yellow{background:radial-gradient(circle at 35% 30%,#ffe9a3,var(--yellow) 72%);border-radius:30%}
+  .blob.sky{background:radial-gradient(circle at 35% 30%,#bfe3ef,var(--sky) 72%)}
+  .kicker{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--pink-deep);background:var(--pink-soft);border-radius:999px;padding:5px 12px}
+  h1{font-size:28px;font-weight:800;margin:12px 0 6px;line-height:1.3;letter-spacing:-.03em;word-break:keep-all}
+  @media (min-width:600px){
+    body{padding-block:56px 64px}
+    h1{font-size:34px}
+  }
+
+  .clip{margin:0 0 42px;border-radius:22px;overflow:hidden;box-shadow:var(--clay);background:#e9e4dd;aspect-ratio:800/540;max-width:100%}
+  .clip video{display:block;width:100%;height:100%;object-fit:cover}
+
+  /* 섹션 머리 */
+  .sec{margin-top:34px}
+  .sec-head{display:flex;align-items:center;gap:10px;margin:0 4px 12px}
+  .dot{width:26px;height:26px;flex:none;border-radius:9px;
+    box-shadow:inset -2px -3px 5px rgba(0,0,0,.12), inset 2px 2px 5px rgba(255,255,255,.55)}
+  .dot.sky{background:radial-gradient(circle at 35% 30%,#bfe3ef,var(--sky) 72%)}
+  .dot.green{background:radial-gradient(circle at 35% 30%,#cfe890,var(--green) 72%)}
+  .sec-title{font-weight:700;font-size:18px;margin:0}
+
+  .num{flex:none;width:24px;height:24px;border-radius:50%;background:var(--pink-soft);color:var(--pink-deep);font-size:13px;font-weight:700;line-height:24px;text-align:center;font-variant-numeric:tabular-nums}
+
+  /* 우리 반주는요.. */
+  .card{background:var(--card);border-radius:22px;padding:4px 16px;box-shadow:var(--clay)}
+  .tip{display:flex;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .tip:last-child{border-bottom:none}
+  .tip-main{flex:1;min-width:0}
+  .tip-title{font-weight:600;font-size:16px;margin:0 0 4px;word-break:keep-all}
+  .tip-body{font-size:14px;line-height:1.7;margin:0;word-break:keep-all}
+  .aside{color:var(--muted)}
+  .tip-photo{display:block;width:100%;height:auto;margin-top:12px;border-radius:16px;background:#e9e4dd}
+
+  /* 이렇게 챙겨주면 돼요! */
+  .care-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .care{background:var(--card);border-radius:22px;padding:8px 8px 14px;box-shadow:var(--clay)}
+  .care-photo{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:16px;background:#e9e4dd}
+  .care-head{display:flex;align-items:center;gap:6px;margin:10px 4px 4px}
+  .care-head .num{width:22px;height:22px;line-height:22px;font-size:12px}
+  .care-title{font-weight:600;font-size:15px;margin:0;word-break:keep-all}
+  .care-body{font-size:13px;line-height:1.65;margin:0 4px;word-break:keep-all}
+
+  /* 마무리 */
+  .outro{text-align:center;font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.45;color:var(--pink-deep);margin:48px 0 8px;word-break:keep-all}
+  .outro-art{display:flex;justify-content:center;align-items:center;gap:14px;margin:14px 0 8px}
+  .outro-art > *{display:block;height:auto;animation:float 3.2s ease-in-out infinite;filter:drop-shadow(0 6px 8px rgba(120,100,80,.18))}
+  .outro-art .heart{width:62px}
+  .outro-art .star{width:64px;animation-delay:-1.6s}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-8px) rotate(3deg)}}
+  @media (prefers-reduced-motion:reduce){.outro-art > *{animation:none}}
+
+  .links{display:flex;justify-content:center;margin-top:22px}
+  .link{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;background:var(--pink-soft);color:var(--pink-deep);font-size:14px;font-weight:700;text-decoration:none;-webkit-tap-highlight-color:transparent;transition:transform .12s}
+  .link:active{transform:scale(.96)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="blobs" aria-hidden="true">
+      <span class="blob pink"></span><span class="blob green"></span><span class="blob yellow"></span><span class="blob sky"></span>
+    </div>
+    <span class="kicker">고마운 호철님 은정님</span>
+    <h1>반주를 부탁해요</h1>
+  </header>
+
+  <div class="clip">
+    <video src="hero-banju.mp4" autoplay loop muted playsinline preload="auto"></video>
+  </div>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span class="dot sky" aria-hidden="true"></span>
+      <h2 class="sec-title">우리 반주는요..</h2>
+    </div>
+    <div class="card">
+      <div class="tip">
+        <span class="num">1</span>
+        <div class="tip-main">
+          <p class="tip-title">현관문을 열면 달려나와요.</p>
+          <p class="tip-body">반주가는 중문이 없어요. 그리고 반주가 호기심이 많아서 현관 앞까지 나와 있을 수 있어요. 갑자기 반주가 뛰쳐나갈 수 있으니, 문을 열 때 살~짝 조심히 열어 주세요!</p>
+        </div>
+      </div>
+      <div class="tip">
+        <span class="num">2</span>
+        <div class="tip-main">
+          <p class="tip-title">궁디팡팡을 싫어해요.</p>
+          <p class="tip-body">전세계의 10% 미만이라던데, 반주가 그래요. 대신 미간 사이를 만져 주는 걸 좋아해요. 조금 친해지면 눈인사를 하고, 눈과 눈 사이를 한번 문질러 보세요. <span class="aside">그치만 우리 고양이는 사람도 팹니다.</span></p>
+        </div>
+      </div>
+      <div class="tip">
+        <span class="num">3</span>
+        <div class="tip-main">
+          <p class="tip-title">누나들을 좋아해요.</p>
+          <p class="tip-body">남자사람보다는 여자사람을 좋아해요. 땅콩을 잃어버리기 전에는 남자였거든요. 하하하</p>
+        </div>
+      </div>
+      <div class="tip">
+        <span class="num">4</span>
+        <div class="tip-main">
+          <p class="tip-title">반주 방은 거실 옆 큰 방의 베란다에요.</p>
+          <p class="tip-body">아마 마중 나오지 않았다면 그 곳에 있을지도 몰라요. 반주가 어릴 때부터 쓰던 애착 캣타워가 있는 곳이에요.</p>
+          <img class="tip-photo" src="banju-room.jpg" alt="반주 방 (베란다 캣타워)">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span class="dot green" aria-hidden="true"></span>
+      <h2 class="sec-title">이렇게 챙겨주면 돼요!</h2>
+    </div>
+    <div class="care-grid">
+      <div class="care">
+        <img class="care-photo" src="care-1-bowl.jpg" alt="메인 밥그릇">
+        <div class="care-head"><span class="num">1</span><p class="care-title">메인 밥그릇</p></div>
+        <p class="care-body">거실 캣타워 밑에 있어요. 중간 버튼을 누르면 밥이 나와요.</p>
+      </div>
+      <div class="care">
+        <img class="care-photo" src="care-2-bowl-sub.jpg" alt="서브 밥그릇">
+        <div class="care-head"><span class="num">2</span><p class="care-title">서브 밥그릇</p></div>
+        <p class="care-body">화장실 앞에 있어요. 뚜껑을 열면 밥이 들어 있어요.</p>
+      </div>
+      <div class="care">
+        <img class="care-photo" src="care-3-water.jpg" alt="메인 물그릇">
+        <div class="care-head"><span class="num">3</span><p class="care-title">메인 물그릇</p></div>
+        <p class="care-body">캣타워 밑에 있어요. 한번 헹구고 주방이나 화장실에서 수돗물로 받아요.</p>
+      </div>
+      <div class="care">
+        <img class="care-photo" src="care-4-water-sub.jpg" alt="서브 물그릇">
+        <div class="care-head"><span class="num">4</span><p class="care-title">서브 물그릇</p></div>
+        <p class="care-body">주방 앞 아일랜드 옆에 있어요. 이것도 비우고 수돗물을 다시 채워주세요.</p>
+      </div>
+      <div class="care">
+        <img class="care-photo" src="care-5-wetfood.jpg" alt="습식사료 그릇">
+        <div class="care-head"><span class="num">5</span><p class="care-title">습식사료 그릇</p></div>
+        <p class="care-body">아마 다 안먹었을 수도 있고, 다 먹었을 수도 있는데요. 그대로 부엌 싱크대 위에 두고 물만 받아주세요 (벌레가 꼬여서..)</p>
+      </div>
+      <div class="care">
+        <img class="care-photo" src="care-6-scoop.jpg" alt="모래 삽">
+        <div class="care-head"><span class="num">6</span><p class="care-title">모래 삽</p></div>
+        <p class="care-body">거실 화장실 세면대 위에 있어요. 삽을 쓴 뒤에는 세면대 위에 올려주세요.</p>
+      </div>
+      <div class="care">
+        <img class="care-photo" src="care-7-litter.jpg" alt="메인 화장실">
+        <div class="care-head"><span class="num">7</span><p class="care-title">메인 화장실</p></div>
+        <p class="care-body">여기에 주로 맛동산이 숨어 있어요. 거실 화장실 변기에 버려주세요!</p>
+      </div>
+      <div class="care">
+        <img class="care-photo" src="care-8-litter-sub.jpg" alt="서브 화장실">
+        <div class="care-head"><span class="num">8</span><p class="care-title">서브 화장실</p></div>
+        <p class="care-body">여기는 감자 전용이에요. 이것도 그냥 거실 화장실 변기에!</p>
+      </div>
+    </div>
+  </section>
+
+  <p class="outro">정말 고마워요!<br>이 은혜는 언제든 꼭 갚겠습니다!!!!</p>
+  <div class="outro-art" aria-hidden="true">
+    <svg class="heart" viewBox="0 0 100 90">
+      <defs>
+        <radialGradient id="heartg" cx="35%" cy="30%" r="75%">
+          <stop offset="0" stop-color="#ffc6da"/>
+          <stop offset=".55" stop-color="#f47fa8"/>
+          <stop offset="1" stop-color="#d9467b"/>
+        </radialGradient>
+      </defs>
+      <path d="M50 84 C20 64 4 46 4 28 C4 14 15 4 28 4 C38 4 46 10 50 18 C54 10 62 4 72 4 C85 4 96 14 96 28 C96 46 80 64 50 84 Z" fill="url(#heartg)"/>
+      <ellipse cx="27" cy="23" rx="10" ry="6" fill="#fff" opacity=".55" transform="rotate(-35 27 23)"/>
+    </svg>
+    <svg class="star" viewBox="0 0 100 100">
+      <defs>
+        <radialGradient id="starg" cx="38%" cy="32%" r="75%">
+          <stop offset="0" stop-color="#fff0b8"/>
+          <stop offset=".55" stop-color="#f7cf57"/>
+          <stop offset="1" stop-color="#e9a62c"/>
+        </radialGradient>
+      </defs>
+      <polygon points="50,13 61.17,37.63 88.04,40.64 68.07,58.87 73.51,85.36 50,72 26.49,85.36 31.93,58.87 11.96,40.64 38.83,37.63" fill="url(#starg)" stroke="url(#starg)" stroke-width="12" stroke-linejoin="round"/>
+      <ellipse cx="40" cy="36" rx="8" ry="5" fill="#fff" opacity=".55" transform="rotate(-30 40 36)"/>
+    </svg>
+  </div>
+
+  <div class="links">
+    <a class="link" href="https://banjuga.vercel.app/">← 반주가 오는 길 확인하기</a>
+  </div>
+</div>
+</body>
+</html>
