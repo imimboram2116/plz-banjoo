@@ -51,10 +51,10 @@
   .blob.green{background:radial-gradient(circle at 35% 30%,#cfe890,var(--green) 72%);border-radius:40% 60% 55% 45%/50% 45% 55% 50%}
   .blob.yellow{background:radial-gradient(circle at 35% 30%,#ffe9a3,var(--yellow) 72%);border-radius:30%}
   .blob.sky{background:radial-gradient(circle at 35% 30%,#bfe3ef,var(--sky) 72%)}
-  h1{font-size:28px;font-weight:800;margin:12px 0 6px;line-height:1.3;letter-spacing:-.03em;word-break:keep-all}
+  h1{font-size:36px;font-weight:800;margin:12px 0 6px;line-height:1.3;letter-spacing:-.03em;word-break:keep-all}
   @media (min-width:600px){
     body{padding-block:56px 64px}
-    h1{font-size:34px}
+    h1{font-size:44px}
   }
 
   .clip{margin:0 0 42px;border-radius:22px;overflow:hidden;box-shadow:var(--clay);background:#e9e4dd;aspect-ratio:800/540;max-width:100%}
@@ -67,31 +67,36 @@
     box-shadow:inset -2px -3px 5px rgba(0,0,0,.12), inset 2px 2px 5px rgba(255,255,255,.55)}
   .dot.sky{background:radial-gradient(circle at 35% 30%,#bfe3ef,var(--sky) 72%)}
   .dot.green{background:radial-gradient(circle at 35% 30%,#cfe890,var(--green) 72%)}
-  .sec-title{font-weight:700;font-size:18px;margin:0}
+  .dot.yellow{background:radial-gradient(circle at 35% 30%,#ffe9a3,var(--yellow) 72%)}
+  .sec-title{font-weight:700;font-size:23px;margin:0}
 
-  .num{flex:none;width:24px;height:24px;border-radius:50%;background:var(--pink-soft);color:var(--pink-deep);font-size:13px;font-weight:700;line-height:24px;text-align:center;font-variant-numeric:tabular-nums}
+  .num{flex:none;width:31px;height:31px;border-radius:50%;background:var(--pink-soft);color:var(--pink-deep);font-size:17px;font-weight:700;line-height:31px;text-align:center;font-variant-numeric:tabular-nums}
 
   /* 우리 반주는요.. */
   .card{background:var(--card);border-radius:22px;padding:4px 16px;box-shadow:var(--clay)}
   .tip{display:flex;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
   .tip:last-child{border-bottom:none}
   .tip-main{flex:1;min-width:0}
-  .tip-title{font-weight:600;font-size:16px;margin:0 0 4px;word-break:keep-all}
-  .tip-body{font-size:14px;line-height:1.7;margin:0;word-break:keep-all}
+  .tip-title{font-weight:600;font-size:21px;margin:0 0 4px;word-break:keep-all}
+  .tip-body{font-size:18px;line-height:1.7;margin:0;word-break:keep-all}
   .aside{color:var(--muted)}
   .tip-photo{display:block;width:100%;height:auto;margin-top:12px;border-radius:16px;background:#e9e4dd}
+
+  /* 잠깐! 양해를 구해요 */
+  .notice{background:#fff6dd;border-radius:22px;padding:18px;box-shadow:var(--clay)}
+  .notice-body{font-size:18px;line-height:1.7;margin:0;word-break:keep-all}
 
   /* 이렇게 챙겨주면 돼요! */
   .care-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .care{background:var(--card);border-radius:22px;padding:8px 8px 14px;box-shadow:var(--clay)}
   .care-photo{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:16px;background:#e9e4dd}
   .care-head{display:flex;align-items:center;gap:6px;margin:10px 4px 4px}
-  .care-head .num{width:22px;height:22px;line-height:22px;font-size:12px}
-  .care-title{font-weight:600;font-size:15px;margin:0;word-break:keep-all}
-  .care-body{font-size:13px;line-height:1.65;margin:0 4px;word-break:keep-all}
+  .care-head .num{width:29px;height:29px;line-height:29px;font-size:16px}
+  .care-title{font-weight:600;font-size:20px;margin:0;word-break:keep-all}
+  .care-body{font-size:17px;line-height:1.65;margin:0 4px;word-break:keep-all}
 
   /* 마무리 */
-  .outro{text-align:center;font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.45;color:var(--pink-deep);margin:48px 0 8px;word-break:keep-all}
+  .outro{text-align:center;font-size:29px;font-weight:800;letter-spacing:-.02em;line-height:1.45;color:var(--pink-deep);margin:48px 0 8px;word-break:keep-all}
   .outro-art{display:flex;justify-content:center;align-items:center;gap:14px;margin:14px 0 8px}
   .outro-art > *{display:block;height:auto;animation:float 3.2s ease-in-out infinite;filter:drop-shadow(0 6px 8px rgba(120,100,80,.18))}
   .outro-art .heart{width:62px}
@@ -100,7 +105,7 @@
   @media (prefers-reduced-motion:reduce){.outro-art > *{animation:none}}
 
   .links{display:flex;justify-content:center;margin-top:22px}
-  .link{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;background:var(--pink-soft);color:var(--pink-deep);font-size:14px;font-weight:700;text-decoration:none;-webkit-tap-highlight-color:transparent;transition:transform .12s}
+  .link{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;background:var(--pink-soft);color:var(--pink-deep);font-size:18px;font-weight:700;text-decoration:none;-webkit-tap-highlight-color:transparent;transition:transform .12s}
   .link:active{transform:scale(.96)}
 </style>
 </head>
@@ -147,11 +152,28 @@
       <div class="tip">
         <span class="num">4</span>
         <div class="tip-main">
+          <p class="tip-title">간식은 거실의 벽면장 안에 있어요.</p>
+          <p class="tip-body">자칫 꺼내놓으면 모르는 새에 반주가 비닐채 뜯어 먹을지도 몰라요... ^.^.. (쩝) 친해지기 위해 츄르를 1개 주시거나 트릿을 조금씩 줘보세요. 손~~~ 하면 손을 주기도 합니다.</p>
+        </div>
+      </div>
+      <div class="tip">
+        <span class="num">5</span>
+        <div class="tip-main">
           <p class="tip-title">반주 방은 거실 옆 큰 방의 베란다에요.</p>
           <p class="tip-body">아마 마중 나오지 않았다면 그 곳에 있을지도 몰라요. 반주가 어릴 때부터 쓰던 애착 캣타워가 있는 곳이에요.</p>
           <img class="tip-photo" src="banju-room.jpg" alt="반주 방 (베란다 캣타워)">
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span class="dot yellow" aria-hidden="true"></span>
+      <h2 class="sec-title">잠깐! 양해를 구해요.</h2>
+    </div>
+    <div class="notice">
+      <p class="notice-body">반주가 이렇게 오랜 시간 혼자 있는 것은 처음이라, 불안핑 집사 때문에 고민 끝에 거실에 카메라를 설치해두었어요. 모쪼록 양해를 구합니다.🙏🏼🙏🏼🙏🏼</p>
     </div>
   </section>
 
@@ -164,7 +186,7 @@
       <div class="care">
         <img class="care-photo" src="care-1-bowl.jpg" alt="메인 밥그릇">
         <div class="care-head"><span class="num">1</span><p class="care-title">메인 밥그릇</p></div>
-        <p class="care-body">거실 캣타워 밑에 있어요. 중간 버튼을 누르면 밥이 나와요.</p>
+        <p class="care-body">거실 캣타워 밑에 있어요. 중간 버튼을 누르면 밥이 나와요. 그릇이 비어있다면 채워주세요.</p>
       </div>
       <div class="care">
         <img class="care-photo" src="care-2-bowl-sub.jpg" alt="서브 밥그릇">
@@ -199,12 +221,12 @@
       <div class="care">
         <img class="care-photo" src="care-8-litter-sub.jpg" alt="서브 화장실">
         <div class="care-head"><span class="num">8</span><p class="care-title">서브 화장실</p></div>
-        <p class="care-body">여기는 감자 전용이에요. 이것도 그냥 거실 화장실 변기에!</p>
+        <p class="care-body">여기는 주로 감자가 숨어 있어요. 바닥부터 긁어야 잘 긁혀서 좀 어려우실 수도...! 이것도 거실 화장실 변기에 버려주세요.</p>
       </div>
     </div>
   </section>
 
-  <p class="outro">복받으실 거예요.<br>감사합니다!</p>
+  <p class="outro">복받으실 거예요.<br>정말정말 감사합니다!</p>
   <div class="outro-art" aria-hidden="true">
     <svg class="heart" viewBox="0 0 100 90">
       <defs>
